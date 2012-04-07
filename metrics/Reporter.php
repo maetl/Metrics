@@ -33,4 +33,9 @@ class Reporter
     {
         return \Metrics::saveReporter($this->_key_mask, new reporters\ToTango($options));
     }
+
+	public function syslog($options = array())
+	{
+		return \Metrics::saveReporter($this->_key_mask, new reporters\Syslog($options));
+	}
 }
